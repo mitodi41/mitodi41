@@ -2,7 +2,6 @@
 - 👀 I’m interested in learning more 
 - 🌱 I’m currently learning javascript
 - 💞️ I’m looking to collaborate on WordPress plugins
-- 📫 How to reach me michelle@mitodi.com
 
 <!---
 mitodi41/mitodi41 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
