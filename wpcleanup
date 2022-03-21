@@ -1,0 +1,27 @@
+//disable gutenberg
+add_filter('gutenberg_can_edit_posts','__return_false',10);
+//disable pingback and xml-rpc
+add_filter('xmlrpc_enabled','__return_false);
+add_filter('wp_headers','disable_x_pingback');
+function disable_x_pingback($headers){
+unset($headers['XPingback']);
+return $headers;
+}
+//WP Cleanup further
+remove_action('wp_head','print_emoji_detection_script',7);
+remove_action('wp_print_styles','print_emoji_styles');
+//Remove RSS feed links
+remove_action('wp_head','feed_links_extra',3);
+remove_action('wp_head','feed_links',2);
+//Remove wp_embed
+remove_action('wp_footer',function(){
+wp_dequeue_script('wp_embed');
+});
+//Remove Block Library if not using gutenberg
+remove_action('wp_enqueue_scripts',function(){
+wp_dequeue_style('wp-block-library')'
+wp_dequeue_script('comment-reply');
+});
+//wp config
+define('CORE_UPGRADE_SKIP_NEW_BUNDLED',true);
+
