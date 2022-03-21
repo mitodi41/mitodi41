@@ -1,13 +1,14 @@
-/*Display custom meta description or the post excerpt */
+// Display custom meta description or the post excerpt 
+// change " if( is_single() " in the code to " if( is_single() || ( is_page() ) "
 function add_custom_meta_des(){
 
-#Homepage Meta Description
+//Homepage Meta Description
 if( is_home() || is_front_page() ){
 	$meta_des = "Enter your homepage meta description here"; #Edit here
 	echo '<meta name="description" content="' . $meta_des . '" />';
 }
 
-#Single Page Meta Description
+//Single Page Meta Description
 if( is_single() ){
 	$des = get_post_meta( get_the_id(), 'description', true);
 	if( ! empty( $des )  ){
