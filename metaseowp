@@ -1,4 +1,4 @@
-// Meta Tags In WordPress Without A Plugin
+// Add Meta Tags In WordPress Without A Plugin
 function gretathemes_meta_description() {
     global $post;
     if ( is_singular() ) {
